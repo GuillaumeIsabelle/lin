@@ -12,3 +12,8 @@
 /dev/mapper/fedora_lin-root /                       xfs     defaults        0 0
 UUID=5e399876-9f19-4549-9588-61dc033d0efe /boot                   ext4    defaults        1 2
 /dev/mapper/fedora_lin-swap swap                    swap    defaults        0 0
+
+
+LABEL=dukup       /dukup                             ext4    defaults     1 2
+LABEL=ldata	/ldata				ext4	defaults 1 2
+LABEL=wdata /wdata ext4 defaults 1 2
