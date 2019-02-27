@@ -56,3 +56,34 @@ docker login
  docker run hello-world
 
 ```
+
+
+___
+# --@v File Accessibility
+## Samba
+```bash
+dnf -y install samba samba-client
+
+## see /etc/samba/smb.conf sample on : 
+### --@urir https://github.com/GuillaumeIsabelle/lin/blob/master/etc/samba/smb.conf
+
+#Checkout the repo
+mkdir /etc/lin && cd /etc/lin/ &&   git clone git@github.com:GuillaumeIsabelle/lin.git .
+cat /etc/lin/etc/samba/smb.conf etc/samba
+
+## Share dir
+mkdir -m 777 /home/share
+
+#Enable service
+systemctl start smb nmb
+systemctl enable smb nmb
+
+#Firewall
+firewall-cmd --add-service=samba --permanent
+firewall-cmd --reload
+setsebool -P samba_enable_home_dirs on
+# SE
+restorecon -R /home/share
+reboot
+
+```
