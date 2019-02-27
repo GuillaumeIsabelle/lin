@@ -4,9 +4,9 @@ Lin is Containerizing Linux Fedora Platform where I intend to migrate my good ol
 
 ___
 
+# Install key and Git
 ```bash
 
-# Install key
 
 ## Generate 
 ssh-keygen
